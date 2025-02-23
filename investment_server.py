@@ -21,35 +21,12 @@ def get_top_25_tickers():
         'MRK', 'CVX', 'KO', 'PEP', 'COST'
     ]
 
-def print_top_10_stocks():
-    """Simulate top 10 stocks for demonstration"""
-    top_10 = [
-        {'Ticker': 'AAPL', 'Current': 170.50, 'Predicted': 175.25, 'Return': 2.79},
-        {'Ticker': 'MSFT', 'Current': 325.75, 'Predicted': 334.50, 'Return': 2.69},
-        {'Ticker': 'GOOG', 'Current': 181.58, 'Predicted': 190.06, 'Return': 4.67},
-        {'Ticker': 'NVDA', 'Current': 134.43, 'Predicted': 148.06, 'Return': 10.14},
-        {'Ticker': 'AMZN', 'Current': 145.20, 'Predicted': 152.35, 'Return': 4.92},
-        {'Ticker': 'META', 'Current': 325.10, 'Predicted': 335.75, 'Return': 3.28},
-        {'Ticker': 'JPM', 'Current': 264.24, 'Predicted': 301.23, 'Return': 14.00},
-        {'Ticker': 'COST', 'Current': 580.15, 'Predicted': 595.50, 'Return': 2.47},
-        {'Ticker': 'AVGO', 'Current': 1055.30, 'Predicted': 1085.75, 'Return': 2.89},
-        {'Ticker': 'V', 'Current': 348.53, 'Predicted': 351.73, 'Return': 0.92}
-    ]
-    
-    print("\nTop 10 Stocks by Expected Return:")
-    print("=" * 60)
-    print(f"{'Ticker':<10} {'Current Price':>15} {'Predicted Price':>15} {'Expected Return':>15}")
-    print("-" * 60)
-    
-    for stock in top_10:
-        print(f"{stock['Ticker']:<10} ${stock['Current']:>14.2f} ${stock['Predicted']:>14.2f} {stock['Return']:>14.2f}%")
-    
-    print("=" * 60)
+
 
 def process_finance_query(query):
     """Process financial queries using Claude"""
     try:
-        client = anthropic.Anthropic(api_key='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')
+        client = anthropic.Anthropic(api_key='api_key')
         
         # Special handling for stock recommendation query
         if query.lower() == "what are the best stocks to invest in":
